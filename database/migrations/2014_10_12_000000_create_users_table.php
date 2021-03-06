@@ -20,6 +20,24 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->string('image')->nullable();
+            //$table->integer('user_id')->nullable();
+            $table->text('number')->nullable();
+            $table->text('date')->nullable();
+            $table->text('gender')->nullable();
+            $table->text('name_empl')->nullable();
+            $table->text('salary')->nullable();
+            $table->text('residentiel')->nullable();
+
+            $table->string('account_no')->index()->nullable();
+            $table->text('type_ac')->nullable();
+            $table->float('balance')->nullable();
+            $table->string('cot')->nullable();
+            $table->string('tax')->nullable();
+            $table->string('imf')->nullable();
+            $table->string('atc')->nullable();
+            $table->string('telex')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

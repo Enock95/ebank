@@ -29,7 +29,10 @@ class UsersController extends Controller
 
     public function index()
     {
-        return view('admin.adduser.index');
+       $users = User::orderBy('id', 'desc')->paginate(10);
+      /// $profiles = Profile::orderBy('id', 'desc')->paginate(10);
+    //    $userInfo = $users->merge($profiles);
+       return view('admin.adduser.index', compact('users'));
     }
 
     /**
@@ -66,40 +69,46 @@ class UsersController extends Controller
             'imf' =>'required',
             'atc' =>'required',
             'telex' =>'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
         ]);
-      
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'username' => $request->username,
-            'password' => bcrypt('password')
-        ]);
-
-        $profile = Profile::create([
-            'user_id' => $user->id,
-            'avatar' => 'uploads/avatars/1.png',
-            'date' => $request->date,
-            'number' => $request->number,
-            'gender' => $request->gender,
-            'name_empl' => $request->name_empl,
-            'salary' => $request->salary,
-            'residentiel' => $request->residentiel
-        ]);
-           
-        $account = Account::create([
-            'user_id' => $user->id,
-            'account_no' => $request->account_no,
-            'cot' => $request->cot,
-            'tax' => $request->tax,
-            'imf' => $request->imf,
-            'atc' => $request->atc,
-            'telex' => $request->telex,
+        $user = new User;
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $name = time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = public_path('/uploads');
+                $imagePath = $destinationPath. "/".  $name;
+                // $img = Image::make($thumbnailpath)->resize(188, 223, function($constraint) {
+                // $constraint->aspectRatio()};
+                $image->move($destinationPath, $name);
+                $user->image = $name;
+            }
+              
+            $user->name     = $request->name;
+            $user->email    = $request->email;
+            $user->username = $request->name;
+            $user->password = bcrypt('password');
+            //$user->save();
+            // $profile = new Profile;
+            //$profile->user_id = $user->id;
+            $user->date = $request->date;
+            $user-> number = $request->number;
+            $user-> gender = $request->gender;
+            $user-> name_empl = $request->name_empl;
+            $user->salary = $request->salary;
+            $user->residentiel = $request->residentiel;
+               
+            //$account = new Account;
+           // $user-> user_id = $user->id;
+            $user->account_no = $request->account_no;
+            $user-> cot = $request->cot;
+            $user-> tax = $request->tax;
+            $user->imf = $request->imf;
+            $user->atc = $request->atc;
+            $user-> telex = $request->telex;
+            $user->save();
             
-        ]);
-
-
-
+        
         return redirect()->back();
     }
 

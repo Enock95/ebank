@@ -33,13 +33,13 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role');
     }
-    public function profile(){
-        return $this->hasOne('App\Profile');
-    }
+    // public function profile(){
+    //     return $this->hasOne('App\Profile');
+    // }
 
-    public function account(){
-        return $this->hasOne('App\Account');
-    }
+    // public function account(){
+    //     return $this->hasOne('App\Account');
+    // }
 
     public function isAdmin()
     {
@@ -55,11 +55,11 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        static::created(function ($user){
-            $user->profile()->create([
-                'name_empl' => 'Profil de'  . $user->username
-            ]);
-        });
+        // static::created(function ($user){
+        //     $user->user()->create([
+        //         'name_empl' => 'Profil de'. $user->username
+        //     ]);
+        // });
     }
 
     /**

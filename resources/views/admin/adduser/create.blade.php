@@ -32,13 +32,8 @@
                                 <input type="text" class="form-control" name="number" placeholder="Mobile/Phone No">
                             </div>
                             <div class="form-group">
-                                <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="file">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                </div>
-                                
-                                </div>
+                                <label for="image">Image Profile</label>
+                                <input type="file" name="image" class="form-control">
                             </div>
                             <div class="form-group "> 
                                 <label for="exampleInputEmail1">Date of Birth</label>                   
