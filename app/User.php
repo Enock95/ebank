@@ -60,6 +60,7 @@ class User extends Authenticatable
         //         'name_empl' => 'Profil de'. $user->username
         //     ]);
         // });
+        
     }
 
     /**
