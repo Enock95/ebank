@@ -30,6 +30,7 @@ class UsersTableSeeder extends Seeder
             'username'=>'user_auteur',
             'email'=>'auteur@auteur.com',
             'password'=>Hash::make('password')
+            
         ]);
 
         $adminRole = Role::where('name','admin')->first();
