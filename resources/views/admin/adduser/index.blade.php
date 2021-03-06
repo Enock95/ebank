@@ -22,13 +22,13 @@
 								<th>Email</th>
 								<th>Account Number</th>
 								<th>Action</th>
-								
+
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($users as $user)
 								<tr>
-									<td><img  style="width: 10px;" src="{{ asset('uploads/'.$user->image) }}" alt="User Profile"></td>
+									<td><img  style="width: 100px; height:100px; " src="{{ asset('uploads/'.$user->image) }}" alt="User Profile"></td>
 									<td>{{ $user->name }}</td>
 									<td>{{ $user->email }}</td>
 									<td>{{ $user->account_no }}</td>
