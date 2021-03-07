@@ -34,6 +34,7 @@ Route::get('admin/users/index', 'UsersController@list')->name('admin.users.index
 Route::get('admin/users/edit/{id}', 'UsersController@edit')->name('admin.users.edit');
 //Route::post('admin/users/{user}', 'UsersController@update')->name('admin.users.update');
 Route::post('admin/users/update{id}', 'UsersController@update')->name('admin.users.update');
+
 Route::get('admin/add_balance/create', 'AccountsController@create')->name('add_balance.index');
 
 Route::get('dash/transfer/create', 'TransferController@create')->name('transfer.create');
