@@ -34,7 +34,7 @@
 									<td>{{ $user->account_no }}</td>
 									<td>
 										<a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-info"></i></a>
-										<a href="#" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+										<a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
 										<a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
 									</td>
 								</tr>

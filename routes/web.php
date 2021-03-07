@@ -30,8 +30,10 @@ Route::group(['middleware' => ['can:manager-users']], function () {
 Route::get('admin/adduser/create', 'UsersController@create')->name('adduser.create');
 Route::get('admin/adduser/index', 'UsersController@index')->name('adduser.index');
 Route::get('admin/users/index', 'UsersController@list')->name('admin.users.index')->middleware('can:edit-users');
-Route::get('admin/users/{user}/edit', 'UsersController@edit')->name('admin.users.edit');
-Route::post('admin/users/{user}', 'UsersController@update')->name('admin.users.update');
+// Route::get('admin/users/{user}/edit', 'UsersController@edit')->name('admin.users.edit');
+Route::get('admin/users/edit/{id}', 'UsersController@edit')->name('admin.users.edit');
+//Route::post('admin/users/{user}', 'UsersController@update')->name('admin.users.update');
+Route::post('admin/users/update{id}', 'UsersController@update')->name('admin.users.update');
 Route::get('admin/add_balance/create', 'AccountsController@create')->name('add_balance.index');
 
 Route::get('dash/transfer/create', 'TransferController@create')->name('transfer.create');
