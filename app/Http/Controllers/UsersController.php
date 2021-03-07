@@ -29,7 +29,7 @@ class UsersController extends Controller
 
     public function index()
     {
-       $users = User::orderBy('id', 'desc')->paginate(10);
+       $users = User::orderBy('id', 'desc')->paginate(5);
       /// $profiles = Profile::orderBy('id', 'desc')->paginate(10);
     //    $userInfo = $users->merge($profiles);
        return view('admin.adduser.index', compact('users'));
