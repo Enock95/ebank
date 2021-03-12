@@ -37,6 +37,7 @@ Route::post('admin/users/update/{id}', 'UsersController@update')->name('admin.us
 Route::post('admin/users/delete/{id}', 'UsersController@destroy')->name('admin.users.delete');
 
 //Route::get('admin/add_balance/create', 'AccountsController@create')->name('add_balance.index');
+Route::get('admin/add_balance/codes', 'UsersController@showCodes')->name('showCodes');
 Route::get('admin/add_balance/create/{id}', 'UsersController@balanceEdit')->name('balanceEdit');
 Route::post('admin/add_balance/update/{id}', 'UsersController@balanceUpdate')->name('balanceUpdate');
 

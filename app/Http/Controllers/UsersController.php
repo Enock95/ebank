@@ -34,6 +34,13 @@ class UsersController extends Controller
     //    $userInfo = $users->merge($profiles);
        return view('admin.adduser.index', compact('users'));
     }
+    public function showCodes()
+    {
+       $users = User::orderBy('id', 'desc')->paginate(5);
+      /// $profiles = Profile::orderBy('id', 'desc')->paginate(10);
+    //    $userInfo = $users->merge($profiles);
+       return view('admin.add_balance.codes', compact('users'));
+    }
 
     /**
      * Show the form for creating a new resource.

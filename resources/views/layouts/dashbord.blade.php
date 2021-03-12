@@ -190,35 +190,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="{{ route('showCodes') }}" class="nav-link">
                   <i class="fas fa-caret-right nav-icon"></i>
-                  <p>Cost of transfert code</p>
+                  <p>All codes</p>
                 </a>
                </li> 
-               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-caret-right nav-icon"></i>
-                  <p>VAT/TAX Code</p>
-                </a>
-               </li> 
-               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-caret-right nav-icon"></i>
-                  <p>IMF Code</p>
-                </a>
-               </li> 
-               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-caret-right nav-icon"></i>
-                  <p>ATC Codes</p>
-                </a>
-               </li> 
-               <li class="nav-item">
-                  <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-caret-right text-info"></i>
-                  <p>Telex Code</p>
-                  </a>
-               </li>
+               
             </ul>   
           </li>
 
@@ -232,14 +209,6 @@
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
-                  <i class="far  nav-icon"></i>
-                  <p>Invoice</p>
-                </a>
-              </li>
-            </ul>
           </li>  
           <li class="nav-item">
             <a href=" #" class="nav-link">
