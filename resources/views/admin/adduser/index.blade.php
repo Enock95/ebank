@@ -21,6 +21,7 @@
 								<th>Name</th>
 								<th>Email</th>
 								<th>Account Number</th>
+								<th>Balance</th>
 								<th>Action</th>
 
 							</tr>
@@ -31,7 +32,8 @@
 									<td><img  style="width: 100px; height:100px; " src="{{ asset('uploads/'.$user->image) }}" alt="User Profile"></td>
 									<td>{{ $user->name }}</td>
 									<td>{{ $user->email }}</td>
-									<td>{{ $user->account_no }}</td>
+									<td> <a href="{{ route('balanceEdit', $user->id) }}" class="btn btn-danger">{{ $user->account_no }}</a> </td>
+									<td> {{ $user->balance }} Euro </td>
 									<td>
 										<a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-info"></i></a>
 										<a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>

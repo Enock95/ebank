@@ -210,10 +210,10 @@ class UsersController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
         ]);
-        
-        
-            $user->roles()->sync($request->roles);
+
             $user->update($request->all());
+           // $user->roles()->sync($request->roles);
+            $user->syncRoles(explode(',', $request->roles));
             return redirect()->route('admin.users.index');
     }
 
@@ -225,6 +225,27 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+    }
+
+    public function balanceEdit($id)
+    {
+        $user = User::find($id);
+        return view('admin.add_balance.create', compact('user'));
+    }
+
+    public function balanceUpdate(Request $request, $id)
+    {
+        $user = User::find($id);
+
+        $user-> balance = $request->balance;
+        $user->save();
+   
+        
+        $this->validate($request, [
+            'balance' =>'required',
+        ]);
+        $user->update($request->all());
+        return redirect()->route('admin.users.index');
     }
 }
