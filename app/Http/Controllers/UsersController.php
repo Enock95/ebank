@@ -253,6 +253,6 @@ class UsersController extends Controller
             'balance' =>'required',
         ]);
         $user->update($request->all());
-        return redirect()->route('admin.users.index');
+        return redirect()->route('adduser.index');
     }
 }
