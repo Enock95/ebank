@@ -123,7 +123,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('profile.create',['user' => auth()->user()])}}" class="nav-link">
+                <a href="#" class="nav-link">
                 <i class="fas  nav-icon"></i>
                   <p>Profile</p>
                 </a>
@@ -144,7 +144,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" " class="nav-link">
+                <a href=" {{ route('transfer.create') }} " class="nav-link">
                   <i class="fas nav-icon"></i>
                   <p>Wire Transfert</p>
                 </a>
@@ -219,7 +219,7 @@
           <li class="nav-header"><h4>Setting</h4></li>
           
           <li class="nav-item has-treeview">
-            <a href="{{route('setting.create')}}" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Accounts setting

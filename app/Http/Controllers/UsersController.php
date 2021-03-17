@@ -116,7 +116,7 @@ class UsersController extends Controller
             $user->save();
             
         
-        return redirect()->back();
+        return redirect()->route('adduser.index');
     }
 
     /**

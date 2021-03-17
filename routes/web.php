@@ -21,9 +21,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/homes', 'HomeController@create')->name('homes');
-Route::get('dash/profile/{user}', 'ProfilesController@index')->name('profile.create');
-Route::patch('dash/profile/{user}', 'ProfilesController@update')->name('profiles.update');
-Route::get('dash/setting/create', 'SettingController@index')->name('setting.create');
+// Route::get('dash/profile/{user}', 'ProfilesController@index')->name('profile.create');
+// Route::patch('dash/profile/{user}', 'ProfilesController@update')->name('profiles.update');
+// Route::get('dash/setting/create', 'SettingController@index')->name('setting.create');
 Route::group(['middleware' => ['can:manager-users']], function () {
     
 });
@@ -43,6 +43,13 @@ Route::post('admin/add_balance/update/{id}', 'UsersController@balanceUpdate')->n
 
 
 Route::get('dash/transfer/create', 'TransferController@create')->name('transfer.create');
+Route::get('dash/transfer/cot', 'TransferController@cot')->name('verif_cot');
+Route::get('dash/transfer/tax', 'TransferController@tax')->name('verif_tax');
+Route::get('dash/transfer/imf', 'TransferController@imf')->name('verif_imf');
+Route::get('dash/transfer/atc', 'TransferController@atc')->name('verif_atc');
+Route::get('dash/transfer/telex', 'TransferController@telex')->name('verif_telex');
+Route::get('dash/transfer/transfer', 'TransferController@transfer')->name('transfer');
+
 
 Route::post('admin/adduser/store', 'UsersController@store')->name('adduser.store');
 

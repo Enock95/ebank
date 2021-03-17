@@ -25,6 +25,30 @@ class TransferController extends Controller
     {
         return view('dash/transfer/create');
     }
+    public function cot()
+    {
+        return view('dash/transfer/cot');
+    }
+    public function tax()
+    {
+        return view('dash/transfer/tax');
+    }
+    public function imf()
+    {
+        return view('dash/transfer/imf');
+    }
+    public function atc()
+    {
+        return view('dash/transfer/atc');
+    }
+    public function telex()
+    {
+        return view('dash/transfer/telex');
+    }
+    public function transfer()
+    {
+        return view('dash/transfer/transfer');
+    }
 
     /**
      * Store a newly created resource in storage.
