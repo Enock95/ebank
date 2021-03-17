@@ -30,7 +30,7 @@
                                     <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
                                     <td>
                             
-                                        <a href="{{route('admin.users.edit', $user->username)}}"> <button class="btn btn-primary" >Editer</button> </a>
+                                        <a href="{{route('admin.users.edit', $user->id)}}"> <button class="btn btn-primary" >Editer</button> </a>
                                         <form action="#" method="post" class="d-inline">
                                             @csrf
                                             @method('DELETE')

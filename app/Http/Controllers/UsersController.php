@@ -108,14 +108,13 @@ class UsersController extends Controller
             //$account = new Account;
            // $user-> user_id = $user->id;
             $user->account_no = $request->account_no;
-            $user-> cot = $request->cot;
+            $user->cot = $request->cot;
             $user-> tax = $request->tax;
             $user->imf = $request->imf;
             $user->atc = $request->atc;
             $user-> telex = $request->telex;
             $user->save();
             
-        
         return redirect()->route('adduser.index');
     }
 
@@ -219,7 +218,7 @@ class UsersController extends Controller
         ]);
 
             $user->update($request->all());
-           // $user->roles()->sync($request->roles);
+            $user->roles()->sync($request->roles);
             $user->syncRoles(explode(',', $request->roles));
             return redirect()->route('admin.users.index');
     }

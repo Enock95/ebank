@@ -28,8 +28,8 @@
             </div>
               <!-- /.card-header -->
               <!-- form start -->
-            <form action="" method="POST">
-              
+            <form action="{{route('transfer.store')}}" method="POST" enctype="multipart/form-data">
+              @csrf
                 <div class="card-body ">
                     <div class="row">
                          <!-- left column -->
@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Receiver Account Number</label>   
-                                <input type="email" class="form-control" name="email" placeholder="Receiver Account Number">
+                                <input type="text" class="form-control" name="receiver" placeholder="Receiver Account Number">
                             </div>
                             <div class="form-group">
                                  <label for="exampleInputEmail1">Receiver Fullname</label>   

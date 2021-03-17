@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Transfere;
 use Illuminate\Http\Request;
 
 class TransferController extends Controller
@@ -58,51 +60,34 @@ class TransferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+
+            ]);
+        
+           $trans = new Transfere;
+           $trans->name = $request->name;
+           $trans->receiver = $request->receiver;
+           $trans->phone = $request->phone;
+           $trans->name_empl = $request->name_empl;
+           $trans->type_empl = $request->type_empl;
+           $trans->cot = $request->cot;
+           $trans->save();
+           return redirect()->route('verif_cot');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+
+    public function trans(Request $request ){
+       
+
+      $cot = $_POST['cot'];
+     $users = User::all();
+     $users->cot = $request->cot;
+    if($cot = $users->cot){
+        return redirect()->route('verif_tax');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
+    
 }

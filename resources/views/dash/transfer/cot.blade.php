@@ -49,14 +49,14 @@
       for your Cost of Transaction Code</label>
       
       
-<form action="#" method="POST" enctype="multipart/form-data">
+<form action="{{route('cot.trans')}}" method="POST" enctype="multipart/form-data">
         
    
-   
+   @csrf
       
       
         <div class="position-relative form-group"><label for="exampleAddress" class="">COT Code</label>
-        <input name="cot" style="height:80px;" type="text" class="form-control" required=""></div>
+        <input name="cot" style="height:80px;" type="text" name="cot" class="form-control" required=""></div>
         
         
         
