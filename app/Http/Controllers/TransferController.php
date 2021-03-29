@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Transfere;
+use App\Transfer;
 use Illuminate\Http\Request;
 
 class TransferController extends Controller
@@ -61,32 +61,66 @@ class TransferController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-
+                'bank_name'         =>'required',
+                'receiver_name'     =>'required',
+                'receiver_num'      =>'required',
+                'receiver_country'  =>'required',
+                'iban'              =>'required',
+                'receiver_adresse'           =>'required',
+                'amount'            =>'required'
             ]);
         
-           $trans = new Transfere;
-           $trans->name = $request->name;
-           $trans->receiver = $request->receiver;
-           $trans->phone = $request->phone;
-           $trans->name_empl = $request->name_empl;
-           $trans->type_empl = $request->type_empl;
-           $trans->cot = $request->cot;
-           $trans->save();
-           return redirect()->route('verif_cot');
+            $transfer = new Transfer;
+                $transfer->bank_name = $request->bank_name;
+                $transfer->receiver_num = $request->receiver_num;
+                $transfer->receiver_name = $request->receiver_name;
+                $transfer->receiver_country = $request->receiver_country;
+                $transfer->iban = $request->iban;
+                $transfer->receiver_adresse = $request->receiver_adresse;
+                $transfer->amount = $request->amount;
+                $transfer->save();
+                return redirect()->route('verif_cot');
     }
 
 
-    public function trans(Request $request ){
+    public function trans_cot(Request $request ){
        
+        $user = User::where('cot', $request->vcot)->first();
 
-      $cot = $_POST['cot'];
-     $users = User::all();
-     $users->cot = $request->cot;
-    if($cot = $users->cot){
-        return redirect()->route('verif_tax');
+            if ( ! $user == null)
+            {
+                return redirect()->route('verif_tax');
+            }else return redirect()->route('cot.trans');
+
     }
+    public function trans_tax(Request $request ){
+       
+        $user = User::where('tax', $request->vtax)->first();
 
+            if ( ! $user == null)
+            {
+                return redirect()->route('verif_imf');
+            }else return redirect()->route('tax.trans');
 
+    }
+    public function trans_imf(Request $request ){
+       
+        $user = User::where('imf', $request->vimf)->first();
+
+            if ( ! $user == null)
+            {
+                return redirect()->route('verif_atc');
+            }else return redirect()->route('imf.trans');
+
+    }
+    public function trans_telex(Request $request ){
+       
+        $user = User::where('telex', $request->vtelex)->first();
+
+            if ( ! $user == null)
+            {
+                return redirect()->route('verif_validtion');
+            }else return redirect()->route('telex.trans');
 
     }
     

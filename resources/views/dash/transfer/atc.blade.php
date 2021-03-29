@@ -4,7 +4,7 @@
 
 <section class="content">
     <a role="tab" class="nav-link active" id="tab-0" data-toggle="tab" href="#tab-content-0">
-        <span><i class="fas fa-money-check-alt" style="font-size:24px;color:orange"></i> Cost of Transaction Code (COT)</span>
+        <span><i class="fas fa-money-check-alt" style="font-size:24px;color:orange"></i> Anti Terorism Discharge Number (ATC)</span>
     </a>
          
                 
@@ -25,8 +25,9 @@
     </div>
     <div class="tab-content">
         <div class="form-desc" style="color:#05194B; text-align:justify;">
-           Dear <strong style="color:brown;">ADODO DOMENOU</strong>, kindly note that you are making a wire transfer of  
-            <strong style="color:brown;">XAF 200.00</strong>
+           Dear <strong style="color:brown;">ADODO DOMENOU</strong>, United States Department of Defense has sanctioned financial insitution without Anti Terorism Approval Code Before granting a successful wire transfer via an Ofhshore bank.
+           Your are mandated by the Department of Defense to obtian a Anti Terorism Code for any wire transfer. this will gurrantee your wire transfer arriving to the destination country. <br>  
+           Your are Transfering<strong style="color:brown;">XAF 200.00</strong>
        
             from your <strong style="color:brown;">5101639280</strong>
             to <strong style="color:brown;">teet</strong> belonging to
@@ -42,11 +43,11 @@
     <p>Siwft Code/IBAN: 7465161656418</p>
     <p>Bank Account: 5101639280</p>
         
-    <p>Your Calculated COT Code Payment is :<!-- <strong style="color:brown;"><//?php echo $_SESSION['hlbank_user']['currency'] ?> 
+    <p><!-- <strong style="color:brown;"><//?php echo $_SESSION['hlbank_user']['currency'] ?> 
     <//?php  echo $_SESSION['amt'] /15 ; ?>.00</strong>--> </p>
 
     <label>Contact Customer services via <a class="btn btn-primary" href="mailto:contact@bkh-ltd.com">contact@bkh-ltd.com</a>
-      for your Cost of Transaction Code</label>
+        for your Anti Terorism Discharge Number</label>
       
       
 <form action="#" method="POST" enctype="multipart/form-data">
@@ -55,8 +56,8 @@
    
       
       
-        <div class="position-relative form-group"><label for="exampleAddress" class="">COT Code</label>
-        <input name="cot" style="height:80px;" type="text" class="form-control" required=""></div>
+        <div class="position-relative form-group"><label for="exampleAddress" class="">Anti Terorism Discharge </label>
+        <input name="vatc" style="height:80px;" type="text" class="form-control" required=""></div>
         
         
         
@@ -76,7 +77,7 @@
                         
                         <button id="submitButton" type="submit" name="submit" class="mt-2 btn btn-primary">
                             <i class="fas fa-money-check-alt" style="font-size:24px;color:orange"></i>&nbsp;
-                            Validate COT &gt;</button>
+                            Synchronize Anti Terorism Discharge &gt;</button>
                     </form>
                 </div>
             </div>

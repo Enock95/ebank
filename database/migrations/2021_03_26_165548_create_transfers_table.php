@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransferesTable extends Migration
+class CreateTransfersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,24 @@ class CreateTransferesTable extends Migration
      */
     public function up()
     {
-        Schema::create('transferes', function (Blueprint $table) {
+        Schema::create('transfers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('phone')->nullable();
-            $table->text('name_empl')->nullable();
-            $table->string('receiver')->nullable();
-            $table->text('type_empl')->nullable();
-            $table->text('cot')->nullable();
+            $table->string('bank_name');
+            $table->string('receiver_num');
+            $table->string('receiver_name');
+            $table->string('receiver_country');
+            $table->string('iban');
+            $table->string('receiver_adresse');
+            $table->float('amount');
             $table->biginteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')
                   ->references('id')
                   ->on('users')
                   ->onDelete('restrict')
-                  ->onUpdate('restrict'); 
+                  ->onUpdate('restrict');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -38,9 +40,6 @@ class CreateTransferesTable extends Migration
      */
     public function down()
     {
-        Schema::table('profiles', function(Blueprint $table) {
-			$table->dropForeign('profiles_user_id_foreign');
-		});
-        Schema::dropIfExists('transferes');
+        Schema::dropIfExists('transfers');
     }
 }

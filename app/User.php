@@ -33,6 +33,11 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role');
     }
+
+    public function transfer()
+    {
+        return $this->belongsToMany('App\Transfer');
+    }
     // public function profile(){
     //     return $this->hasOne('App\Profile');
     // }

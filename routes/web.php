@@ -51,7 +51,12 @@ Route::get('dash/transfer/telex', 'TransferController@telex')->name('verif_telex
 Route::get('dash/transfer/transfer', 'TransferController@transfer')->name('transfer');
 Route::post('dash/transfer/store', 'TransferController@store')->name('transfer.store');
 
-Route::post('dash/transfer/cot', 'TransferController@trans')->name('cot.trans');
+Route::post('dash/transfer/cot', 'TransferController@trans_cot')->name('cot.trans');
+Route::post('dash/transfer/tax', 'TransferController@trans_tax')->name('tax.trans');
+Route::post('dash/transfer/imf', 'TransferController@trans_imf')->name('imf.trans');
+Route::post('dash/transfer/atc', 'TransferController@trans_atc')->name('atc.trans');
+Route::post('dash/transfer/telex', 'TransferController@trans_telex')->name('telex.trans');
+
 
 Route::post('admin/adduser/store', 'UsersController@store')->name('adduser.store');
 

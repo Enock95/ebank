@@ -37,15 +37,15 @@
 
                             <div class="form-group ">
                                 <label for="exampleInputEmail1">Receiver Bank Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Receiver Bank Name">
+                                <input type="text" class="form-control" name="bank_name" placeholder="Receiver Bank Name" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Receiver Account Number</label>   
-                                <input type="text" class="form-control" name="receiver" placeholder="Receiver Account Number">
+                                <input type="text" class="form-control" name="receiver_num" placeholder="Receiver Account Number" required>
                             </div>
                             <div class="form-group">
                                  <label for="exampleInputEmail1">Receiver Fullname</label>   
-                                <input type="text" class="form-control" name="phone" placeholder="Receiver Fullname">
+                                <input type="text" class="form-control" name="receiver_name" placeholder="Receiver Fullname" required>
                             </div>
                             
                                                         
@@ -54,16 +54,16 @@
     
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Receiver Country</label>                     
-                                <input type="text" class="form-control" name="name_empl" placeholder="Receiber Country">
+                                <input type="text" class="form-control" name="receiver_country" placeholder="Receiber Country" required>
                             </div>
                             <div class="form-group">
                                  <label for="exampleInputEmail1">Swift Code/Routing/IBAN</label>   
-                                <input type="text" class="form-control" name="type_empl" placeholder="Swift Code/Routing/IBAN">
+                                <input type="text" class="form-control" name="iban" placeholder="Swift Code/Routing/IBAN" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Residentiel Adress</label>                    
-                                <input type="text" class="form-control" name="cot" placeholder=" Residentiel Address">
+                                <input type="text" class="form-control" name="receiver_adresse" placeholder=" Residentiel Address" required>
                             </div>
                             
                         </div>
@@ -72,7 +72,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Amount</label>                     
                                                   
-                                <input type="text" class="form-control" name="cot" placeholder="Amount">
+                                <input type="text" class="form-control" name="amount" placeholder="Amount" required>
                             </div>
                             
                         </div>    
